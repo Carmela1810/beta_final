@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="logo">
+                <img src="logo.svg" alt="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="/Hombre.html">Hombres</a></li>
+                    <li><a href="/Mujeres.html">Mujeres</a></li>
+                    <li><a href="/niños.html">Niños</a></li>
+                    <li><a href="/Registrarse.html">Registrar</a></li>
+                    <li><a href="/iniciar_sesion.html">Iniciar sesión</a></li>
+                    <li><a href="/listar.html">lista de registro</a></li>
+                    <li><a href="/https://www.instagram.com">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+    <div class="container">
+        <h1 class="mt-5">Lista de Registros</h1>
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th scope="col">USUARIO</th>
+                    <th scope="col">CORREO ELECTRONICO</th>
+                    <th scope="col">CONTRASEÑA</th>
+                    <th scope="col">TELEFONO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se agregarán dinámicamente los registros -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // Este script simula la adición de datos a la tabla.
+        document.addEventListener('DOMContentLoaded', function() {
+            const registros = [
+                { USUARIO:'Juanx', CORREOELECTRONICO: 'juan@example.com', CONTRASEÑA:"HAPPY", TELEFONO: "0426-XXXX" },
+                { USUARIO:'lolad', CORREOELECTRONICO: 'lola12@example.com', CONTRASEÑA:"rest", TELEFONO: "0426-XXXX" },
+            ];
+
+            const tbody = document.querySelector('tbody');
+
+            registros.forEach((registro, index) => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <th scope="row">${index}</th>
+                    <td>${registro.USUARIO}</td>
+                    <td>${registro.CORREOELECTRONICO}</td>
+                    <td>${registro.CONTRASEÑA}</td>
+                    <td>${registro.TELEFONO}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        });
+    </script>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="final">
+            <p>Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
